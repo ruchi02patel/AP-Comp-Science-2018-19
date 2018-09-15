@@ -1,0 +1,23 @@
+import java.lang.Math;
+
+public class Day2Practice2
+{
+	public Day2Practice2()
+	{
+		int x=(int)(Math.random()*6)+1;
+		System.out.println("Dice 1 rolled "+x);
+		int y=(int)(Math.random()*6)+1;
+		System.out.println("Dice 2 rolled "+y);
+		System.out.println("Sum: "+(x+y));
+		System.out.println("Product: "+(x*y));
+		if (x>=y)
+			System.out.println("Difference: "+(x-y));
+		else
+			System.out.println("Difference: "+(y-x));
+	}
+
+	public static void main(String[]args)
+	{
+		Day2Practice2 app=new Day2Practice2();
+	}
+}
