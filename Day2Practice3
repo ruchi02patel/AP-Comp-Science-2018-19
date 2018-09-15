@@ -1,0 +1,69 @@
+import java.lang.Math;
+
+public class Day2Practice3
+{
+	public Day2Practice3()
+	{
+		int p1point=0;
+		int p2point=0;
+		while ((p1point<20)&&(p2point<20)){
+			int p11 = (int)(Math.random()*6)+1;
+			int p12 = (int)(Math.random()*6)+1;
+			int p21 = (int)(Math.random()*6)+1;
+			int p22 = (int)(Math.random()*6)+1;
+			System.out.println("Player 1's Die 1 rolls "+p11);
+			System.out.println("Player 1's Die 2 rolls "+p12);
+			System.out.println("Player 2's Die 1 rolls "+p21);
+			System.out.println("Player 2's Die 2 rolls "+p22);
+
+			//Player1 winning scenario 1
+			if (((p11>p21)&&(p12>p22))||((p11>p22)&&(p12>p21))||((p11==p22)&&(p12>p21))||((p11==p21)&&(p12>p22))||((p11>p22)&&(p12==p21))||((p22==p12)&&(p11>p21)))
+			{
+				p1point+=3;
+			}
+
+			//Player2 winning scenario 1
+			if (((p21>p11)&&(p22>p12))||((p21>p12)&&(p22>p11))||((p21==p12)&&(p22>p11))||((p21==p11)&&(p22>p12))||((p21>p12)&&(p22==p11))||((p12==p22)&&(p21>p11)))
+			{
+				p2point+=3;
+			}
+
+			//Player1 winning scenario 2
+			if (p11>(p21+p22))
+			{
+				p1point+=6;
+			}
+			//Player2 winning scenario 2
+			if (p21>(p11+p12))
+			{
+				p2point+=6;
+			}
+
+			//Player1 winning scenario 3
+			if ((p12>p21)&&(p12>p22))
+			{
+				p1point+=1;
+			}
+			//Player2 winning scenario 3
+			if ((p22>p11)&&(p22>p12))
+			{
+				p2point+=1;
+			}
+			System.out.println("Player 1 has "+p1point+" points.");
+			System.out.println("Player 2 has "+p2point+" points.");
+			System.out.println();
+		}//while end
+
+		if (p1point > p2point)
+			System.out.println("Player 1 wins!");
+		else if (p2point > p1point)
+			System.out.println("Player 2 wins!");
+		else
+			System.out.println("It's a tie!");
+	}
+
+	public static void main(String[]args)
+	{
+		Day2Practice3 app=new Day2Practice3();
+	}
+}
