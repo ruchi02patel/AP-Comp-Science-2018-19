@@ -1,0 +1,104 @@
+import java.lang.Math;
+public class Day1Tasks
+{
+	public Day1Tasks()
+	{
+		//1
+		int sum = 0;
+		int count = 0;
+		for (int i = 1; i <=100; i++)
+			if (i%2==0)
+			{
+				sum += i;
+				count++;
+			}
+		double avg = sum/count;
+		System.out.println("average of even numbers from 1-100: "+avg);
+
+		System.out.println();
+		//2
+		for (int i = 5; i > 0; i--)
+		{
+			for (int j = 0; j < i; j++)
+			{
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+
+		System.out.println();
+		//3
+		for (int i = 0; i < 4; i++)
+		{
+			for (int j = 4; j > i; j--)
+			{
+				System.out.print(j+1);
+			}
+			if (i%2==0)
+				System.out.print("*");
+			System.out.println();
+		}
+
+		System.out.println();
+		//4
+		for (int i = 0; i < 15; i++)
+		{
+			int x = (int)(Math.random()*15)+1;
+			System.out.print(x);
+			for (int j = 0; j < x; j++)
+				System.out.print("*");
+			System.out.println();
+		}
+
+		System.out.println();
+		//5
+		for (int i = 0; i < 5; i++)
+		{
+			for (int j = 1; j < i+1; j++)
+			{
+					System.out.print(j);
+			}
+			System.out.println();
+		}
+
+		System.out.println();
+		//6
+		for (int i = 0; i < 10; i++)
+		{
+			//System.out.println(i);
+			for (int j = 0; j < i/2; j++)
+			{
+				System.out.print("*");
+			}
+
+			System.out.println((i+1)/2);
+		}
+
+		System.out.println();
+		//7
+		int sums = 0;
+		for (int i = 0; i < 5; i++)
+		{
+			sums += i;
+			System.out.print(sums);
+			if (i != 4)
+				System.out.print(", ");
+		}
+		System.out.println();
+		sums = 10;
+		for (int i = 0; i < 5; i++)
+		{
+			sums += i;
+			System.out.print(sums);
+			if (i != 4)
+				System.out.print(", ");
+		}
+		System.out.println();
+
+	}//publicEnd
+
+	public static void main(String[]args)
+	{
+		Day1Tasks app = new Day1Tasks();
+	}
+}
