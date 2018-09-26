@@ -1,0 +1,122 @@
+import java.lang.Math;
+
+public class Array2DProblems
+{
+	public Array2DProblems()
+	{
+		//a
+		int count1 = 0;
+		int count2 = 0;
+		int x[][] = new int[2][2];
+		for (int i=0; i<x.length; i++)
+		{
+			for (int j=0; j<x[0].length; j++)
+			{
+				int num=(int)(Math.random()*2)+1;
+				if (num == 1)
+				{
+					count1++;
+					x[i][j] = 1;
+				}
+				if (num == 2)
+				{
+					count2++;
+					x[i][j] = 2;
+				}
+				if(count1 > 2)
+					x[i][j] = 2;
+				if(count2 > 2)
+					x[i][j] = 1;
+			}
+		}
+		for (int i=0; i<x.length; i++)
+		{
+			for (int j=0; j<x[0].length; j++)
+			{
+				System.out.print(x[i][j]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+
+		//b
+		count1 = 0;
+		count2 = 0;
+		int y[][] = new int[4][4];
+		for (int i=0; i<y.length; i++)
+		{
+			for (int j=0; j<y[0].length; j++)
+			{
+				int num=(int)(Math.random()*2)+1;
+				if (num == 1)
+				{
+					count1++;
+					y[i][j] = 1;
+				}
+				if (num == 2)
+				{
+					count2++;
+					y[i][j] = 2;
+				}
+				if(count1 > 8)
+					y[i][j] = 2;
+				if(count2 > 8)
+					y[i][j] = 1;
+			}
+		}
+		for (int i=0; i<y.length; i++)
+		{
+			for (int j=0; j<y[0].length; j++)
+			{
+				System.out.print(y[i][j]+" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+
+		//c
+		count1 = 0;
+		count2 = 0;
+		int z[][] = new int[6][6];
+				for (int i=0; i<z.length; i++)
+				{
+					for (int j=0; j<z[0].length; j++)
+					{
+						int num=(int)(Math.random()*18)+1;
+						if (num == 1)
+						{
+							count1++;
+							z[i][j] = 1;
+						}
+						if (num == 2)
+						{
+							count2++;
+							z[i][j] = 2;
+						}
+						if (num == 2)
+						{
+							count2++;
+							z[i][j] = 2;
+						}
+						if(count1 > 2)
+							z[i][j] = 2;
+						if(count2 > 2)
+							z[i][j] = 1;
+					}
+				}
+				for (int i=0; i<z.length; i++)
+				{
+					for (int j=0; j<z[0].length; j++)
+					{
+						System.out.print(z[i][j]+" ");
+					}
+					System.out.println();
+				}
+
+		System.out.println();
+	}
+	public static void main(String[]args)
+	{
+		Array2DProblems app=new Array2DProblems();
+	}
+}
