@@ -1,0 +1,22 @@
+public class MethodExample
+{
+	public void printHello()
+	{
+		System.out.println("Hello");
+	}
+
+	public int sumTotal (int a, int b)
+	{
+		return a+b;
+	}
+
+	public MethodExample()
+	{
+		printHello();
+	}
+
+	public static void main(String[]args)
+	{
+		MethodExample app=new MethodExample();
+	}
+}
