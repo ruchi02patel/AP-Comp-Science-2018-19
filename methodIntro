@@ -1,0 +1,57 @@
+import java.lang.Math;
+
+public class methodIntro
+{
+	public int methodOne()
+	{
+		int num = (int)(Math.random()*8)+56;
+		return num;
+	}
+	public double methodTwo()
+	{
+		int num = (int)(Math.random()*963)+45;
+		double sqr = num*num;
+		return sqr;
+	}
+	public double methodThree()
+	{
+		int num = (int)(Math.random()*120)+632;
+		double root = Math.sqrt(num);
+		return root;
+	}
+	public void methodFour()
+	{
+		int sum=0;
+		for (int i = 0; i<10; i++)
+		{
+			int num = (int)(Math.random()*69)+6;
+			System.out.print(num+" ");
+			sum += num;
+		}
+		System.out.println(sum/10.0);
+	}
+	public void methodFive()
+	{
+		int min=104;
+		for (int i = 0; i>20; i++)
+		{
+			int num = (int)(Math.random()*19)+85;
+			if (num < 104)
+				min = num;
+		}
+		System.out.println(min);
+	}
+	public methodIntro()
+	{
+		System.out.println(methodOne());
+		System.out.println(methodTwo());
+		System.out.println(methodThree());
+		methodFour();
+		methodFive();
+	}
+
+	public static void main(String[]args)
+	{
+		methodIntro app=new methodIntro();
+	}
+}
