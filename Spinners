@@ -1,0 +1,112 @@
+import java.lang.Math;
+
+public class Spinners
+{
+	public int spin()
+	{
+		return (int)(Math.random()*5)+1;
+	}
+	public int spin(int a)
+	{
+		return (int)(Math.random()*a)+1;
+	}
+	public int product(int a, int b)
+	{
+		return (a*b);
+	}
+	public boolean isEven(int a)
+	{
+		return (a%2 == 0);
+	}
+	public int lowest(int a, int b)
+	{
+		int min = 11;
+		if (a < min)
+			min = a;
+		if (b < min)
+			min = b;
+		return min;
+	}
+	public int lowest(int a, int b, int c)
+	{
+		int min = 11;
+		if (a < min)
+			min = a;
+		if (b < min)
+			min = b;
+		if (c < min)
+			min = c;
+		return min;
+	}
+	public boolean greater(int a, int b)
+	{
+		boolean max = false;
+		if (a >= b)
+			return true;
+		else
+			return false;
+	}
+	public void winner(int a, int b)
+	{
+		if ((greater(a, b)) == true)
+			System.out.println("You win!");
+		else
+			System.out.println("You lose!");
+	}
+
+	public Spinners()
+	{
+		int s2s = spin(2);
+		System.out.println("2-Section Spinner: \t\t"+s2s+"\n");
+		if (isEven(s2s))
+		{
+			int s5s1 = spin();
+			int s5s2 = spin();
+			int s4s = spin(4);
+			System.out.println("First 5-section spinner: \t"+s5s1);
+			System.out.println("Second 5-section spinner: \t"+s5s2);
+			System.out.println("4-section spinner: \t\t"+s4s);
+			if (lowest(s5s1,s5s2) == s5s2)
+			{
+				greater((product(s5s2, s4s)), product(s5s1, s5s1));
+				winner((product(s5s2, s4s)), product(s5s1, s5s1));
+			}
+			else if (lowest(s5s1, s5s2) == s5s1)
+			{
+				greater((product(s5s1, s4s)), product(s5s2, s5s2));
+				winner((product(s5s1, s4s)), product(s5s2, s5s2));
+			}
+		}
+		else
+		{
+			int s5s1 = spin();
+			int s5s2 = spin();
+			int s5s3 = spin();
+			int s10s = spin(10);
+			System.out.println("First 5-section spinner: \t"+s5s1);
+			System.out.println("Second 5-section spinner: \t"+s5s2);
+			System.out.println("Third 5-section spinner: \t"+s5s3);
+			System.out.println("10-section spinner: \t\t"+s10s);
+			if ((lowest(s5s1, s5s2, s5s3) == s5s1))
+			{
+				greater((product(s5s2, s5s3)),(product(s5s1, s10s)));
+				winner((product(s5s2, s5s3)),(product(s5s1, s10s)));
+			}
+			else if ((lowest(s5s1, s5s2, s5s3) == s5s2))
+			{
+				greater((product(s5s1, s5s3)),(product(s5s2, s10s)));
+				winner((product(s5s1, s5s3)),(product(s5s2, s10s)));
+			}
+			else if ((lowest(s5s1, s5s2, s5s3) == s5s3))
+			{
+				greater((product(s5s1, s5s2)),(product(s5s3, s10s)));
+				winner((product(s5s1, s5s2)),(product(s5s3, s10s)));
+			}
+		}
+	}
+
+	public static void main(String[]args)
+	{
+		Spinners app=new Spinners();
+	}
+}
