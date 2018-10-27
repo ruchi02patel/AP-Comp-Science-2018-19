@@ -1,0 +1,28 @@
+import java.lang.Math;
+
+public class PrimeNumberChecker
+{
+	public boolean isPrime(int a, int b)
+	{
+		if(b==1)
+			return true;
+		if (a%b==0)
+			return false;
+		return isPrime(a, b-1); //if not divisible by b, try b-1
+	}
+	public PrimeNumberChecker()
+	{
+		for (int i=0; i<30; i++)
+		{
+			int x = (int)(Math.random()*99)+2;
+			if (isPrime(x, x/2)) //send the number and half its value
+				System.out.println("The number "+x+" is prime.");
+			else
+				System.out.println("The number "+x+" is not prime.");
+		}
+	}
+	public static void main(String[]args)
+	{
+		PrimeNumberChecker app=new PrimeNumberChecker();
+	}
+}
