@@ -1,0 +1,23 @@
+public class Ruchi2
+{
+	public int plusMinus(int n, boolean b)
+	{
+		if (n == 0)
+			return 0;
+		if (b == true)
+			return n+plusMinus(n-1, false);
+		return (-n)+plusMinus(n-1, true);
+	}
+	public Ruchi2()
+	{
+		System.out.println("The PlusMinus sum of the series that starts with "+6+" is "+plusMinus(6, true)+".");
+		System.out.println("The PlusMinus sum of the series that starts with "+(-6)+" is "+plusMinus(6, false)+".");
+		System.out.println("The PlusMinus sum of the series that starts with "+0+" is "+plusMinus(0, true)+".");
+	}
+
+	public static void main(String[]args)
+	{
+		Ruchi2 app=new Ruchi2();
+	}
+
+}
