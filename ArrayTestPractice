@@ -1,0 +1,64 @@
+ import java.lang.Math;
+ import java.util.ArrayList;
+
+ public class ArrayTestPractice
+ {
+ 	public ArrayList<Integer> filler(int size)
+ 	{
+ 		ArrayList<Integer> l = new ArrayList<Integer>();
+ 		for (int i=0; i<size; i++)
+ 			l.add((int)(Math.random()*10));
+ 		return l;
+ 	}
+
+ 	public void output(ArrayList<Integer> l)
+ 	{
+		for(int i=0; i<l.size();i++)
+		{
+			System.out.print(l.get(i)+" ");
+			if (i%5 == 4)
+				System.out.println();
+		}
+		System.out.println();
+		System.out.println();
+	}
+
+	public ArrayList<Integer> sorter(ArrayList<Integer> l, int num)
+	{
+		//insertion sort
+		for (int i=1; i<l.size(); i++)
+		{
+			int j=i;
+			if (num==1)//descending
+			{
+					while((j>0) && (l.get(j)>l.get(j-1)))
+					{
+							l.add(j-1, l.remove(j));//essentially a swap within the arrayList
+							j--; 					//add (remove) eliminates need for temp
+													//swapping in an arrayList is therefore easier than in an array
+					}
+			}
+			else//ascending
+			{
+				while ((j>0) && (l.get(j)<l.get(j-i)))//same as above except for <
+				{
+					l.add(j-i, l.remove(j));
+					j--;
+				}
+			}
+		}
+		return l;
+	}
+ 	public ArrayTestPractice()
+ 	{
+ 		ArrayList<Integer> list = new ArrayList<Integer>();
+ 		list = filler(30);
+ 		output(list);
+ 		output(sorter(list,0));
+  		output(sorter(list,1));
+ 	}
+ 	public static void main(String[]args)
+ 	{
+ 		ArrayTestPractice app=new ArrayTestPractice();
+ 	}
+ }
