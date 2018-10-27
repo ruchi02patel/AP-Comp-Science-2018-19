@@ -1,0 +1,40 @@
+import java.lang.Math;
+
+public class MethodTasks
+{
+	public int randNum (int lower, int upper)
+	{
+		return (int)(Math.random()*(upper-lower+1))+lower;
+	}
+
+	public double average (int list[])
+	{
+		double sum = 0;
+		for (int i = 0; i < list.length; i++)
+		{
+			sum+= list[i];
+		}
+		return sum/list.length;
+	}
+
+	public void outputNums(int list[])
+	{
+		for (int i = 0; i < list.length; i++)
+		{
+			list[i] = randNum(10, 20);
+			System.out.print(list[i]+" ");
+		}
+	}
+
+	public MethodTasks()
+	{
+		int[] arr = new int[randNum(5, 10)];
+		outputNums(arr);
+		System.out.println("The average of all of the values is "+average(arr));
+	}
+
+	public static void main(String[]args)
+	{
+		MethodTasks app=new MethodTasks();
+	}
+}
