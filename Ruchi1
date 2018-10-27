@@ -1,0 +1,83 @@
+import java.lang.Math;
+
+public class Ruchi1
+{
+	public int spinner()
+	{
+		return (int)(Math.random()*10)+1;
+	}
+	public int spinner(int sections)
+	{
+		return (int)(Math.random()*sections)+1;
+	}
+	public boolean isEven(int num)
+	{
+		if (num%2==0)
+			return true;
+		return false;
+	}
+	public int product(int a, int b, int c)
+	{
+		return a*b*c;
+	}
+	public int sum (int a, int b, int c)
+	{
+		return a+b+c;
+	}
+	public int difference(int a, int b)
+	{
+		return a-b;
+	}
+	public int max(int a, int b, int c)
+	{
+		int m = 0;
+		if (a>m)
+			m=a;
+		if (b>m)
+			m=b;
+		if (c>m)
+			m=c;
+		return m;
+	}
+	public int min(int a, int b, int c)
+	{
+		int m = 31;
+		if (a<m)
+			m=a;
+		if (b<m)
+			m=b;
+		if (c<m)
+			m=c;
+		return m;
+	}
+	public Ruchi1()
+	{
+		int x=spinner();
+		int y=spinner(30);
+		int z=spinner(7);
+		System.out.println("Spinner 1(10 equal sections): "+x);
+		System.out.println("Spinner 2(30 equal sections): "+y);
+		System.out.println("Spinner 3(7 equal sections): "+z);
+		int count = 0;
+		if (isEven(x) == true)
+			count++;
+		if (isEven(y) == true)
+			count++;
+		if (isEven(z) == true)
+			count++;
+		if (count == 3)
+			System.out.println("ALL EVEN");
+		else if (count == 2)
+			System.out.println("Sum of the values: "+sum(x,y,z));
+		else if (count == 1)
+			System.out.println("Product of the values: "+product(x,y,z));
+		else
+			System.out.println("The difference between the largest and smallest spinner: "+difference(max(x,y,z), min(x,y,z)));
+	}
+
+	public static void main(String[]args)
+	{
+		Ruchi1 app=new Ruchi1();
+	}
+
+}
