@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+import java.lang.Math;
+
+public class QuickQuizPract
+{
+	public QuickQuizPract()
+	{
+		ArrayList<Integer> list= new ArrayList<Integer>();
+		for (int i=0; i<10; i++)
+			list.add((int)(Math.random()*21)+10);
+		System.out.println(list);
+
+		for (int i=0; i<10; i++)
+			list.remove(0);
+		System.out.println(list);
+
+		for (int i=0; i<10; i++)
+			list.add((int)(Math.random()*23)+39);
+		System.out.println(list);
+
+		for (int i=9; i>=0; i--)
+			if (list.get(i)%2==1)
+				list.remove(i);
+		System.out.println(list);
+
+		for (int i=0; i<list.size(); i++)
+			if (list.get(i)%3==2)
+				list.set(i, ((int)(Math.random()*6)+100));
+		System.out.println(list);
+
+		//DOES IT IN ONE STEP
+		list.add(list.remove(0));
+		System.out.println(list);
+
+	}
+	public static void main(String[]args)
+	{
+		QuickQuizPract app=new QuickQuizPract();
+	}
+}
