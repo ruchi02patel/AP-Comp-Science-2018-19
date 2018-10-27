@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+import java.lang.Math;
+
+public class ArrayListT2
+{
+	public ArrayList<Integer> setList()
+	{
+		ArrayList<Integer> l = new ArrayList<Integer>();
+		for (int i=0; i<50; i++)
+			l.add((int)(Math.random()*100)+1);
+		return l;
+	}
+
+	public ArrayList<Integer> remove3(ArrayList<Integer> l)
+	{
+		int i=0;
+		while (i < l.size())
+		{
+			if (l.get(i)%3 == 0)
+				l.remove(i);
+			else
+				i++;
+		}
+		return l;
+	}
+
+	public boolean isOdd(int i)
+	{
+		if (i%2==1)
+			return true;
+		return false;
+	}
+
+	public ArrayListT2()
+	{
+		ArrayList<Integer> list = setList();
+		System.out.println(list);
+		System.out.println(remove3(list));
+
+	}
+
+
+	public static void main(String[]args)
+	{
+		ArrayListT2 app=new ArrayListT2();
+	}
+}
