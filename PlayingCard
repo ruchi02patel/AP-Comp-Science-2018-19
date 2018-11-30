@@ -1,0 +1,52 @@
+public class PlayingCard
+{
+	private int val;
+	private String suit;
+
+	public PlayingCard(int val, String suit)
+	{
+		this.val = val;
+		this.suit = suit;
+	}
+
+	public String getSuit()
+	{
+		return suit;
+	}
+
+	public int getVal()
+	{
+		return val;
+	}
+
+	public String toString()
+	{
+		if (val == 1)
+			return "Ace of "+suit;
+		else if (val ==2)
+			return "Two of "+suit;
+		else if (val ==3)
+			return "Three of "+suit;
+		else if (val ==4)
+			return "Four of "+suit;
+		else if (val ==5)
+			return "Five of "+suit;
+		else if (val ==6)
+			return "Six of "+suit;
+		else if (val ==7)
+			return "Seven of "+suit;
+		else if (val ==8)
+			return "Eight of "+suit;
+		else if (val ==9)
+			return "Nine of "+suit;
+		else if (val ==10)
+			return "Ten of "+suit;
+		else if (val ==11)
+			return "Jack of "+suit;
+		else if (val ==12)
+			return "Queen of "+suit;
+		else
+			return "King of "+suit;
+	}
+
+}
